@@ -112,7 +112,7 @@ def df_preparation_chunked(filename, path, chunksize=10000):
         chunk.to_csv(filename, mode='a', header=not os.path.exists(filename))
     amount_c = len(utils.countires_list(counter=counter_c))
     date = meta.date()
-    with open(f"{path}/meta_data.txt", "w") as f:
+    with open(f"{category_and_path}_meta_data.txt", "w") as f:
         f.writelines([f"{start_date}\n", f"{end_date}\n", f"{amount_songs}\n", f"{amount_c}\n", f"{date}\n"])
 
 def main():

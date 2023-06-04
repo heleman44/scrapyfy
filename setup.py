@@ -7,7 +7,6 @@ setup(
     author='sp, ma',
     packages=[
         'scripts',
-        'flask_extension',
     ],
     install_requires=[
         'argparse',
