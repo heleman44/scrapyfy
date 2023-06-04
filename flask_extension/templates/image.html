@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scrapyfy</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h3>Welcome to the scrapyfy data monitor</h3>
+      <img src="{{ url_for('static', filename='plot.png') }}" alt="Plot">
+    </main>
+    <footer>
+      <p>Copyright &copy; {{ 2023 }}</p>
+    </footer>
+  </body>
+</html>
+

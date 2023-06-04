@@ -1,0 +1,12 @@
+mood
+acousticness
+danceability
+duration_ms
+instrumentalness
+liveness
+loudness
+mode
+popularity
+speechiness
+tempo
+valence

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scrapyfy</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+
+        <ul>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('png') }}">Plot</a></li>
+        </ul>
+          <form action="{{ url_for('change_categroy') }}" method="post">
+            <button style="background-color: green; color: black; padding: 10px 20px;" type="submit">Change category</button>
+          </form>
+          <form action="{{ url_for('data_preparation') }}" method="post">
+            <button style="background-color: red; color: black; padding: 10px 20px;" type="submit">Prepare data</button>
+          </form>
+          <li></li>
+          <form action="{{ url_for('c_r') }}" method="post">
+            <input type="text" name="user_input">
+            <button type="submit">Enter country for r</button>
+          </form>
+          <li></li>
+          <form action="{{ url_for('png_list_c_r') }}" method="post">
+            <button type="submit">Selected recorded</button>
+          </form>
+          <li></li>
+          <form action="{{ url_for('png_world_recorded') }}" method="post">
+            <button type="submit">Recorded tracks</button>
+          </form> 
+          <li></li>
+          <form action="{{ url_for('png_list_c_hr') }}" method="post">
+            <button type="submit">Selected happy ratio</button>
+          </form>
+          <li></li>
+          <form action="{{ url_for('png_world_ratio') }}" method="post">
+            <button type="submit">Ratio happy</button>
+          </form>
+          <li></li>
+          <form action="{{ url_for('c_hr') }}" method="post">
+            <input type="text" name="user_input">
+            <button type="submit">Enter country for hr</button>
+          </form>
+      </nav>
+    </header>
+    <main>
+      <h2>{{ category }}</h2>
+      <h3>Meta data</h3>
+        <li> Stand: {{ date }}</li>
+        <li> Start date: {{ start }}</li>
+        <li> Latest date: {{ last }}</li>
+        <li> Amount countires: {{ countires }}</li>
+        <li> Amount songs: {{ songs }}</li>
+    </main>
+    <footer>
+      <p>Copyright &copy; {{ 2023 }}</p>
+    </footer>
+  </body>
+</html>
+

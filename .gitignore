@@ -1,0 +1,10 @@
+*.csv
+*.txt
+
+*.egg-info/*
+__pycache__/
+*.egg
+
+config/*
+*.json
+dist/*
