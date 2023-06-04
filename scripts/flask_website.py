@@ -5,10 +5,20 @@ import data_plotting
 import utils
 import meta_data_extraction as meta
 import matplotlib.pyplot as plt
+import threading
+from pyngrok import ngrok
 plt.switch_backend('agg')
 
 global category
 category = "Viral"
+
+def get_token():
+    token_file = 'token.txt'
+
+    with open(token_file,'r') as f:
+        token=f.read()
+    token=token.split()[0]
+    return token
 
 app = Flask(__name__)
 
@@ -100,6 +110,18 @@ def png_world_recorded():
     plt.savefig("static/plot.png")
     return render_template("image.html")
 
+def run_app():
+    app.run(port=5000)# ssl_context='adhoc', host='0.0.0.0', port=5000)
+
+
 
 if __name__ == "__main__":
-    app.run(debug=True)# ssl_context='adhoc', host='0.0.0.0', port=5000)
+    app_thread = threading.Thread(target=run_app)
+    app_thread.start()
+    token=get_token()
+    ngrok.set_auth_token(token)
+
+    # Create a tunnel to the Flask app and expose it using ngrok
+    public_url = ngrok.connect(5000)
+    print(f"Your Flask app is accessible at: {public_url}")
+
