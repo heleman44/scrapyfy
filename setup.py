@@ -12,6 +12,14 @@ setup(
         'argparse',
         'numpy',
         'matplotlib',
-        'scipy'
+        'scipy',
+        'pandas',
+        'translate',
+        'geopandas',
+        'flask',
+        'scikit-learn',
+        'lyricsgenius',
+        'tqdm',
+        'pyngrok'
     ],
 )
